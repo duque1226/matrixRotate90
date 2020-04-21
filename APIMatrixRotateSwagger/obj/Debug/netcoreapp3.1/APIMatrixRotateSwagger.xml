@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>APIMatrixRotateSwagger</name>
+    </assembly>
+    <members>
+        <member name="M:APIMatrixRotateSwagger.Controllers.MatrixRotateController.Get">
+            <summary>
+            Método para obtener un mensaje de bienvenida a la API   
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:APIMatrixRotateSwagger.Controllers.MatrixRotateController.Post(APIMatrixRotateSwagger.Entities.InputData)">
+             <summary>
+             Método para rotar una matriz 90° las veces que se especifique.
+             La cantidad de giros de 90° se especifica en la propiedad N como un entero.
+             La matrix se ingresa como un campo de texto teniendo en cuenta que para agregar
+             una nueva columna se separa por ',' y para agregar una nueva fila por ';'.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /MatrixRotate
+                 {
+                    "N": 1,
+                    "Matrix": "A,B;C,D;E,F"        
+                 }
+            
+             </remarks>        
+        </member>
+        <member name="M:APIMatrixRotateSwagger.Interfaces.IMatrixOperation.RotateMatrix(APIMatrixRotateSwagger.Entities.InputData)">
+            <summary>
+            Método para rotar la matriz ingresada
+            </summary>
+            <param name="textData"> Datos de cantidad de giros de 90° y la matriz en una cadena de texto
+            </param>
+        </member>
+        <member name="M:APIMatrixRotateSwagger.Interfaces.IMatrixOperation.validateMatrix(System.Collections.Generic.List{System.String})">
+            <summary>
+            Método para validar el formato de la matriz de entrada
+            </summary>
+            <param name="matrix">
+            Cadena de texto con la matriz
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:APIMatrixRotateSwagger.Interfaces.IMatrixOperation.createDataFormat(APIMatrixRotateSwagger.Entities.InputData)">
+            <summary>
+            Método para crear el formato correcto para realizar la rotación de la matriz
+            </summary>
+            <param name="inputData">
+            JSON que viene del cliente
+            </param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
